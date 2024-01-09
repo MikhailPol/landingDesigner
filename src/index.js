@@ -1,0 +1,14 @@
+import './style.scss';
+import './assets/images/Logo.png';
+import './assets/images/logo.webp';
+import './assets/images/main_logo.png';
+import './assets/images/main_logo.svg';
+import './assets/images/image1.webp';
+import './assets/images/project_1.webp';
+import './assets/images/project_2.webp';
+import './assets/images/project_3.webp';
+import './assets/images/icon.svg';
+import './assets/images/Facebook.svg';
+import './assets/images/Instagram.svg';
+import './assets/images/LinkedIn.svg';
+import './assets/images/Twitter.svg';
