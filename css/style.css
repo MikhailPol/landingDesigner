@@ -1,0 +1,108 @@
+/***
+    The new CSS reset - version 1.11.1 (last updated 24.10.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+ *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Fix mobile Safari increase font-size on landscape mode */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu, summary {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+    user-select: auto;
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+    all: revert;
+    box-sizing: border-box;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    line-break: after-white-space;
+    -webkit-line-break: after-white-space;
+    user-select: auto;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+    all: revert;
+    box-sizing: border-box;
+}
+:root{scroll-behavior:smooth}body{position:relative;margin:0 auto;width:1440px}.header__nav{display:flex;width:1440px;height:89px;padding:0px 201px;flex-direction:column;justify-content:center;align-items:center;flex-shrink:0}.header__nav .nav__container{display:flex;justify-content:space-between;align-items:center;align-self:stretch}.header__nav .nav__container__logo{width:59px;height:48.512px;background:#d3d3d3 url(../assets/images/main_logo.svg) no-repeat center/cover}.header__nav .nav__container__menu{display:flex;justify-content:center;align-items:center;gap:32px}.menu__items{display:flex;align-items:flex-start;gap:32px}.menu__item{color:#2d2c2c;font-family:"Epilogue",sans-serif;font-size:16px;font-style:normal;font-weight:400;line-height:150%}.menu__btn{display:flex;padding:8px 20px;justify-content:center;align-items:center;gap:8px;background:#2d2c2c}.menu__btn .menu__btn__link{color:#fff;font-family:Epilogue;font-size:16px;font-style:normal;font-weight:400;line-height:150%}.header__banner{height:864px}.header__banner .banner__title{position:absolute;top:222px;left:189px;right:600px;color:#2d2c2c;font-family:"Epilogue",sans-serif;font-size:150px;font-style:normal;font-weight:800;line-height:176.25px;z-index:20;word-wrap:break-word}.header__banner .banner__wrapper-img{display:flex;justify-content:center;align-items:center;position:absolute;padding:4.99px 8.99px 4.99px .99px;top:202.7px;left:687.8px;width:649.66px;height:649.66px}.header__banner .banner__wrapper-img .banner__img{position:relative;width:570px;height:570px;background:#e7e7e7;flex-shrink:0;background:#e7e7e7;transform:rotate(-8.699deg)}.header__banner .banner__wrapper-img .banner__img::before{content:"";position:absolute;top:-0.53px;left:-4.3px;width:100%;height:100%;background:#d3d3d3 url(../assets/images/image1.webp) no-repeat center/cover;transform:rotate(16.216deg);opacity:.9}.header__banner .banner__letters{position:absolute;top:535.21px;left:175px;width:656px;height:193px}.header__banner .banner__letters--U-1{position:absolute;font-family:"Epilogue",sans-serif;font-size:51.778px;font-style:normal;font-weight:600;line-height:normal;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;top:36px;left:30px;transform:rotate(40.598deg)}.header__banner .banner__letters--I{position:absolute;font-family:"Epilogue",sans-serif;font-size:51.778px;font-style:normal;font-weight:600;line-height:normal;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;top:52.3px;left:60px;transform:rotate(37.078deg)}.header__banner .banner__letters--sl{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:64px;left:72px;transform:rotate(34.447deg)}.header__banner .banner__letters--U-2{position:absolute;font-family:"Epilogue",sans-serif;font-size:51.778px;font-style:normal;font-weight:600;line-height:normal;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;top:79px;left:89.5px;transform:rotate(30.482deg)}.header__banner .banner__letters--X{position:absolute;font-family:"Epilogue",sans-serif;font-size:51.778px;font-style:normal;font-weight:600;line-height:normal;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;top:95.5px;left:121.5px;transform:rotate(25.767deg)}.header__banner .banner__letters--D{position:absolute;color:#2d2c2c;font-family:"Epilogue",sans-serif;font-size:51.778px;font-style:normal;font-weight:800;line-height:normal;top:114px;left:165.5px;transform:rotate(19deg)}.header__banner .banner__letters--e-1{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:124px;left:199.5px;transform:rotate(14.626deg)}.header__banner .banner__letters--s{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:129.5px;left:227.5px;transform:rotate(10.765deg)}.header__banner .banner__letters--i{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:132.5px;left:255.5px;transform:rotate(7.894deg)}.header__banner .banner__letters--g{position:absolute;color:#2d2c2c;font-family:"Epilogue",sans-serif;font-size:51.778px;font-style:normal;font-weight:800;line-height:normal;top:135.5px;left:269.5px;transform:rotate(4.853deg)}.header__banner .banner__letters--n{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:136.5px;left:299.5px;transform:rotate(0.718deg)}.header__banner .banner__letters--e-2{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:135.5px;left:329.5px;transform:rotate(-3.281deg)}.header__banner .banner__letters--r{position:absolute;color:#2d2c2c;font-family:"Epilogue",sans-serif;font-size:51.778px;font-style:normal;font-weight:800;line-height:normal;top:133.5px;left:358.5px;transform:rotate(-6.561deg)}.header__banner .banner__letters--b{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:127px;left:392px;transform:rotate(-12.029deg)}.header__banner .banner__letters--a{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:119.5px;left:421.5px;transform:rotate(-16.13deg)}.header__banner .banner__letters--s-2{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:110.5px;left:449.5px;transform:rotate(-20.06deg)}.header__banner .banner__letters--e-3{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:99.5px;left:475.5px;transform:rotate(-23.921deg)}.header__banner .banner__letters--d-2{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:87px;left:501px;transform:rotate(-27.954deg)}.header__banner .banner__letters--i-2{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:69px;left:541.5px;transform:rotate(-33.045deg)}.header__banner .banner__letters--n-2{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:56px;left:551px;transform:rotate(-36.053deg)}.header__banner .banner__letters--U-3{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:27px;left:585.5px;transform:rotate(-42.58deg)}.header__banner .banner__letters--K{position:absolute;color:#0d0f16;font-family:Epilogue;font-size:51.778px;font-style:normal;font-weight:300;line-height:normal;top:3px;left:611.28px;transform:rotate(-47.364deg)}.breifs{display:inline-flex;padding:102px 52px 124px 52px;justify-content:center;align-items:center;background-color:#131212}.breifs__wrapper{display:flex;flex-direction:column;align-items:flex-start;gap:59px}.breifs .brefis__line{display:flex;align-items:flex-start;gap:8px}.breifs .brefis__line .breifs__item{position:relative;width:440px;height:156px}.breifs .brefis__line .breifs__item-number{position:absolute;top:17px;color:#fff;font-family:"Epilogue",sans-serif;font-size:70px;font-style:normal;font-weight:100;line-height:normal}.breifs .breifs__item-wrapper{position:absolute;left:115px;display:inline-flex;flex-direction:column;align-items:flex-start;gap:5px}.breifs .breifs__item-wrapper .breifs__item-title{color:#fff;font-family:"Epilogue",sans-serif;font-size:40px;font-style:normal;font-weight:300;line-height:normal}.breifs .breifs__item-wrapper .breifs__item-descr{color:#fff;font-family:"Epilogue",sans-serif;font-size:18px;font-style:normal;font-weight:200;line-height:123%}.projects{position:relative;margin-top:170px;margin-left:200px}.projects__title{width:772px;height:224px;color:#2d2c2c;font-family:"Epilogue",sans-serif;font-size:120px;font-style:normal;font-weight:800;line-height:93.5%}.projects__wrapper{margin-top:70px;display:inline-flex;flex-direction:column;align-items:flex-start;gap:78px}.projects__wrapper .projects__box{position:relative;width:1040px;height:447px}.projects .projects-img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover;filter:brightness(55%)}.projects .box-first{position:absolute;top:92px;left:46px;display:flex;width:433px;flex-direction:column;align-items:flex-start;gap:16px;color:#fff;font-family:"Epilogue",sans-serif;font-style:normal}.projects .box-first__title{align-self:stretch;font-size:16px;font-weight:600;line-height:150%}.projects .box-first__descr{width:433px;font-size:45px;font-style:normal;font-weight:200;line-height:120%}.projects .box-first__descr span{font-size:45px;font-style:normal;font-weight:800;line-height:120%}.projects .box-second{position:absolute;top:132px;left:560px;display:flex;flex-direction:column;align-items:flex-start;gap:24px;width:433px;color:#fff;font-family:"Epilogue",sans-serif}.projects .box-second__descr{align-self:stretch;font-size:18px;font-style:normal;font-weight:400;line-height:150%}.projects .box-second__wrapper{display:flex;padding-top:16px;align-items:center;gap:24px}.projects .box-second__wrapper .wrapper__link{display:flex;padding:8px 0px;justify-content:center;align-items:center;gap:4px}.projects .box-second__wrapper .wrapper__link-text{font-size:16px;font-style:normal;font-weight:400;line-height:150%}.projects .box-second__wrapper .wrapper__link-img{width:16px;height:16px}.about{position:relative;margin-top:170px;width:1440px;height:1470px;background-color:#131212}.about__content{position:absolute;top:109px;left:64px;display:flex;width:1312px;padding:0px 119px 0px 166px;align-items:flex-start;gap:169px}.about__img-1{position:absolute;top:561px;left:209px;width:532px;height:498px;background:#d3d3d3 url(../assets/images/image1.webp) no-repeat center/cover}.about__img-2{position:absolute;top:853px;left:804px;width:440px;height:411.88px;background:#d3d3d3 url(../assets/images/image1.webp) no-repeat center/cover}.content__column1{display:flex;width:511px;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:16px}.content__column1-title{align-self:stretch;font-family:"Epilogue",sans-serif;color:#f2f2f2;font-size:16px;font-style:normal;font-weight:900;line-height:150%}.content__column1-descr{align-self:stretch;width:422px;font-family:"Epilogue",sans-serif;color:#f2f2f2;font-size:58px;font-style:normal;font-weight:254;line-height:120%;word-wrap:break-word;font-feature-settings:"smcp", "c2sc";font-variant:all-small-caps}.content__column2{display:flex;width:437px;flex-direction:column;align-items:flex-start;gap:24px;flex-shrink:0}.content__column2-descr{color:#f2f2f2;font-family:Roboto;font-size:18px;font-style:normal;font-weight:400;line-height:150%}.footer{position:relative;display:flex;width:1440px;height:434px;padding:80px 0px;margin-top:247px;flex-direction:column;align-items:center;gap:64px;flex-shrink:0}.footer__content{display:flex;width:1064px;height:146px;align-items:flex-start;gap:377px;flex-shrink:0}.footer__content-column{display:flex;flex-direction:column;align-items:flex-start;gap:20px}.footer__content-form{display:flex;width:400px;flex-direction:column;align-items:flex-start;gap:16px;flex-shrink:0;align-self:stretch}.footer .footer__logo{width:59px;height:48.512px;background:#d3d3d3 url(../assets/images/main_logo.svg) no-repeat center/cover}.footer .footer__menu{display:flex;align-items:flex-start;gap:32px}.footer .footer__menu-item{color:#000;font-family:Epilogue;font-size:16px;font-style:normal;font-weight:400;line-height:150%}.footer .form__title{color:#000;font-family:Epilogue;font-size:16px;font-style:normal;font-weight:700;line-height:150%}.footer .form__input{border:1px solid #000;padding:12px;width:257px;color:#505050;font-family:Epilogue;font-size:16px;font-style:normal;font-weight:400;line-height:150%}.footer .form__button{border:1px solid #000;padding:12px 24px;margin-left:10px;color:#000;font-family:Epilogue;font-size:16px;font-style:normal;font-weight:400;line-height:150%;cursor:pointer}.footer .form__privacy{color:#000;font-family:Roboto;font-size:12px;font-style:normal;font-weight:400;line-height:150%}.footer .form__privacy a{text-decoration-line:underline}.footer .footer__divider{width:1280px;border-top:1px solid #000;background-color:#000}.footer .footer__row{display:flex;width:1278px;justify-content:center;align-items:center;gap:716px}.footer .footer__row-reserved{color:#000;font-family:Roboto;font-size:14px;font-style:normal;font-weight:400;line-height:150%}.footer .footer__row-social{display:flex;align-items:flex-start;gap:12px}.footer img{width:24px;height:24px}
